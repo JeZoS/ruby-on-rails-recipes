@@ -12,6 +12,15 @@
 
   <body>
   <%= render "layouts/navigation" %>
+    <div class="container row" >
+      <div class='col-md-10' >
+        <% flash.each do |name,msg| %>
+          <div class='alert'>
+            <%= msg %>
+          </div>
+      <% end %>
+      </div>
+    </div>
     <div class='container'>
       <%= yield %>
     </div>
