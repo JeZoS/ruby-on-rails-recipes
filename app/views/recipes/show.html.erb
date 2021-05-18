@@ -1,0 +1,22 @@
+<h2 align='center' >Recipe Name: <%= @recipe.name.capitalize %> </h2>
+<hr/>
+<div class='p-3 bg-light'>
+    <h4 class='center description'> <strong> Steps: </strong> </h4>
+    <hr/>
+    <%= simple_format(@recipe.description) %>
+    <hr />
+  <div class="pull-right">
+    <p>
+      Created by:
+    </p>
+    <p>
+        <%= link_to gravatar_for(@recipe.chef), recipes_path %>
+    </p>
+    <p>
+      <small><%= @recipe.chef.name.capitalize %></small>
+      <div align='right'>
+        <%= time_ago_in_words(@recipe.created_at) %> ago
+      </div>
+    </p>
+  </div>
+</div>
