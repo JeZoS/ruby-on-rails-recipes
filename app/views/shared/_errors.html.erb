@@ -1,0 +1,9 @@
+<% if obj.errors.any? %>
+    <%= pluralize(obj.errors.count,'error') %>
+    prohibited this <%= obj.class %>'s creation
+    <ul>
+    <% obj.errors.full_messages.each do |msg| %>
+        <li > <%= msg %> </li>
+    <% end %>
+    </ul>
+<% end %>

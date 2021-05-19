@@ -1,15 +1,7 @@
 <h1 align='center' >Create a new recipes</h1>
 <hr />
 
-<% if @recipe.errors.any? %>
-    <%= pluralize(@recipe.errors.count,'error') %>
-    prohibited this <%= @recipe.class %>'s creation
-    <ul>
-    <% @recipe.errors.full_messages.each do |msg| %>
-        <li > <%= msg %> </li>
-    <% end %>
-    </ul>
-<% end %>
+<%= render 'shared/errors' , obj: @recipe %>
 <div class="row">
   <div class="col-md-12">
     <%= form_for(@recipe, :html => {class: "form-horizontal", role: "form"}) do |f| %>
