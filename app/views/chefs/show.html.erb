@@ -1,0 +1,15 @@
+<h1 align='center' >Chefs Profile</h1>
+<hr />
+
+<div class='row'>
+    <div class='col-12 center'>
+        <%= gravatar_for @chef, size:150 %>
+        <h3 class='my-4' > <%= @chef.name.capitalize %> </h3>
+    </div>
+</div>
+<hr/>
+
+<h4 align="center"><%= @chef.name %>'s recipes</h4>
+<%= render 'recipes/recipe', obj: @chef.recipes %>
+
+

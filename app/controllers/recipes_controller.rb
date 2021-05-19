@@ -1,15 +1,17 @@
 class RecipesController < ApplicationController
-
     before_action :set_recipe, only:[:show,:update,:edit,:destroy]
 
     def index
         @recipes = Recipe.all
     end
+
     def show
     end
+
     def new
         @recipe = Recipe.new
     end
+
     def create
         @recipe = Recipe.new(recipe_params)
         @recipe.chef = Chef.first
@@ -47,4 +49,5 @@ class RecipesController < ApplicationController
         def recipe_params
             params.require(:recipe).permit(:name,:description)
         end
+
 end
