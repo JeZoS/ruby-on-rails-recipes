@@ -1,4 +1,9 @@
 <h1 align='center' >Listing all Recipes</h1>
 <hr />
 
-<%= render 'recipe', obj: @recipes %>
+<div align='center' class='paginate'>
+  <%= will_paginate %>
+</div>
+<div align='center'>
+  <%= render 'recipe', obj: @recipes %>
+</div>

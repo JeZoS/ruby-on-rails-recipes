@@ -10,6 +10,9 @@
 <hr/>
 
 <h4 align="center"><%= @chef.name %>'s recipes</h4>
-<%= render 'recipes/recipe', obj: @chef.recipes %>
+<div class='paginate'>
+        <%= will_paginate @chef_recipes %>
+</div>
+<%= render 'recipes/recipe', obj: @chef_recipes %>
 
 

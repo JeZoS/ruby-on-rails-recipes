@@ -28,3 +28,23 @@
   text-align: center;
 }
 
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.items li {
+  list-style: none;
+}
+
+.paginate div{
+  align-items: center;
+  justify-content: center;
+}
+
+.paginate div ul li {
+  margin:5px
+}

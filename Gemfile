@@ -26,7 +26,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem "bootstrap", '~> 5.0.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'will_paginate', '3.1.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
