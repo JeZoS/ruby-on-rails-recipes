@@ -14,8 +14,11 @@
     </p>
     <p>
       <p> <small><%= @recipe.chef.name.capitalize %></small> </p> 
-        <%= link_to 'Edit recipe',edit_recipe_path(@recipe) ,class: 'btn btn-sm btn-primary' %>
+       <% if logged_in? && current_chef == @recipe.chef %>
+        <%= link_to 'Edit recipe',edit_recipe_path(@recipe) ,class: 'btn btn-sm btn-warning' %>
         <%= link_to 'Delete recipe', recipe_path(@recipe), method: :delete, data:{confirm:'Are you sure?'},class:'btn btn-sm btn-danger' %>
+      <% end %>
+        <%= link_to "Return to all recipe's", recipes_path , class:'btn btn-sm btn-primary' %>
       <div align='right'>
         <%= time_ago_in_words(@recipe.created_at) %> ago
       </div>
