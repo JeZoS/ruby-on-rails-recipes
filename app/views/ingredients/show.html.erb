@@ -1,0 +1,14 @@
+<h1 align='center' > <%= @ingredient.name %> </h1>
+<hr />
+
+
+<hr/>
+<% if @ingredient.recipes.count > 0 %>
+    <h4 align='center' > Recipes containing <%= @ingredient.name %> </h4>
+    <div class='paginate'>
+            <%= will_paginate @ingredient_recipe %>
+    </div>
+    <%= render 'recipes/recipe', obj: @ingredient_recipe %>
+<% else %>
+    <h4 align='center'>No recipes yet!</h4>
+<% end %>

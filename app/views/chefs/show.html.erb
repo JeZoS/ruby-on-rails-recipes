@@ -9,8 +9,12 @@
 </div>
 <hr/>
 
-<h4 align="center"><%= @chef.name %>'s recipes</h4>
-<div class='paginate'>
-        <%= will_paginate @chef_recipes %>
-</div>
-<%= render 'recipes/recipe', obj: @chef_recipes %>
+<% if @chef.recipes.count > 0 %>
+    <h4 align="center"><%= @chef.name %>'s recipes</h4>
+    <div class='paginate'>
+            <%= will_paginate @chef_recipes %>
+    </div>
+    <%= render 'recipes/recipe', obj: @chef_recipes %>
+<% else %>
+    <h4 align='center'>No recipes yet!</h4>
+<% end %>
