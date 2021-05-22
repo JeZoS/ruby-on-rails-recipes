@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   # get "/recipes/new", to: 'recipes#new' , as: 'new_recipe'
   # get "/recipes/:id", to: 'recipes#show', as: 'recipe'
   # post "/recipes", to:'recipes#create'
-
+  get "/chat" , to: 'chatrooms#show'
   mount ActionCable.server => '/cable'
+  resources :messages ,only: [:create]
 
 end

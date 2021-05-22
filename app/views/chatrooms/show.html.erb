@@ -1,0 +1,19 @@
+<h1 align="center">ChefChat</h1>
+<hr/>
+
+<div class="row chat-container">
+  <div class="col-md-8 offset-md-2 center-block">
+    <div class="messages" id="messages">
+      <%= render @messages %>
+    </div>
+    <hr/>
+    <div class="message-container">
+        <%= form_for(@message,remote: true,:html => {class:'form-horizontal', role:'form'}) do |f| %>
+            <div class='mb-3'>
+                <%= f.text_area :content, class: 'form-control', placeholder: "Say Something" %>
+            </div>
+            <%= f.submit "Send", disable_with: 'Sending...',class: 'btn btn-sm btn-primary' %>
+        <% end %>
+    </div>
+  </div>
+</div>
